@@ -37,18 +37,18 @@ const Main = ({selectedPunk, punkListData}) => {
                             </div>  
                             <div className='ownerLink'>
                                 
-                                <a target='_blank' href="https://www.instagram.com/">
+                                <a href="https://www.instagram.com/">
                                 <img src={instagramLogo} alt='' />
                                 </a>
                                 
                             </div>
                             <div className='ownerLink'>
-                                <a target='_blank' href="https://twitter.com/">
+                                <a href="https://twitter.com/">
                                 <img src={twitterLogo} alt="" />
                                 </a>
                             </div>
                             <div className='ownerLink'>
-                            <a target='_blank' href="https://www.google.com/">
+                            <a href="https://www.google.com/">
                                 <img src={moreIcon} alt="" />
                                 </a>
                             </div>
