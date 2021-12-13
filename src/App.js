@@ -5,9 +5,12 @@ import Header from './components/Header';
 import PunkList from './components/PunkList'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Main from './components/Main';
 
 function App() {
   const [punkListData, setPunkListData] = useState([])
+  const [selectedPunk, setSelectedPunk] = useState(0)
+
 
   useEffect(() => {
     const getMyNfts = async () => {
@@ -23,11 +26,23 @@ function App() {
   return (
    <div className='app'>
       <Header />
-      {/* <CollectionCard id={0} name={'Bandana'} traits={[{'value': 7}]} image={'https://nftlabs.mypinata.cloud/ipfs/bafkreiasgnibw32isqfyjnv5lhj4wxzp6izayculjlo4ampmmfla3j4tj4'}  /> */}
-      <PunkList punkListData={punkListData} />
+      {
+        punkListData.length > 0 && (
+          <>
+          <Main punkListData={punkListData} selectedPunk={selectedPunk} />   
+          <PunkList
+            punkListData={punkListData} 
+            setSelectedPunk={setSelectedPunk} 
+          />
+          </>
+        )
+      }
+
    </div>
    
   );
 }
 
 export default App;
+
+
